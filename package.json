@@ -1,0 +1,26 @@
+{
+  "name": "nuxt3-practice4",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zakzakst/nuxt3-practice4.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zakzakst/nuxt3-practice4/issues"
+  },
+  "homepage": "https://github.com/zakzakst/nuxt3-practice4#readme",
+  "description": "",
+  "devDependencies": {
+    "nuxt": "^3.20.2"
+  }
+}
