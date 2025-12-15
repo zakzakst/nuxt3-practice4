@@ -22,11 +22,15 @@ useHead({
       <li>{{ PAGE_TITLE }}</li>
     </ul>
   </nav>
+  <p>
+    新規登録は<NuxtLink :to="{ name: 'member2-memberAdd' }">こちら</NuxtLink
+    >から
+  </p>
   <section>
     <h2>{{ PAGE_TITLE }}</h2>
     <ul>
       <li v-for="{ id, name } in memberList" :key="id">
-        <NuxtLink :to="{ name: 'member-memberDetail-id', params: { id } }"
+        <NuxtLink :to="{ name: 'member2-memberDetail-id', params: { id } }"
           >IDが{{ id }}の{{ name }}さん</NuxtLink
         >
       </li>
