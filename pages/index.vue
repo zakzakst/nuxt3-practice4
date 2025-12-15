@@ -1,16 +1,18 @@
+<script setup lang="ts">
+import { useState } from "nuxt/app";
+import type { City } from "../interfaces";
+const cityList = useState<Map<number, City>>("cityList");
+</script>
+
 <template>
-  <!-- <TheBaseSection /> -->
-  <h1>TOP</h1>
-  <nav>
-    <ul>
-      <li>TOP</li>
-    </ul>
-  </nav>
   <section>
-    <p>
-      <NuxtLink :to="{ name: 'member-memberList' }">
-        会員管理はこちら
-      </NuxtLink>
-    </p>
+    <h2>都市リスト</h2>
+    <ul>
+      <li v-for="[id, city] in cityList" :key="id">
+        <NuxtLink :to="{ name: 'WeatherInfo-id', params: { id } }"
+          >{{ city.name }}の天気</NuxtLink
+        >
+      </li>
+    </ul>
   </section>
 </template>
