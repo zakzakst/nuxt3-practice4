@@ -6,6 +6,11 @@ export interface Member {
   note?: string;
 }
 
+export interface ReturnJSONMembers {
+  result: number;
+  data: Member[];
+}
+
 export interface City {
   id: number;
   name: string;
