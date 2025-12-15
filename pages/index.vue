@@ -1,17 +1,18 @@
 <script setup lang="ts">
-import { useState } from "nuxt/app";
-import type { City } from "../interfaces";
-const cityList = useState<Map<number, City>>("cityList");
+import type { User } from "../interfaces";
+const ApiUrl = "https://jsonplaceholder.typicode.com/users";
+const response = await $fetch<User[]>(ApiUrl);
 </script>
 
 <template>
   <section>
-    <h2>都市リスト</h2>
+    <h2>ユーザーリスト</h2>
     <ul>
-      <li v-for="[id, city] in cityList" :key="id">
-        <NuxtLink :to="{ name: 'WeatherInfo-id', params: { id } }"
-          >{{ city.name }}の天気</NuxtLink
-        >
+      <li v-for="user in response" :key="user.id">
+        <NuxtLink :to="{ name: 'user-id', params: { id: user.id } }">{{
+          user.name
+        }}</NuxtLink>
+        <!-- {{ user.name }} -->
       </li>
     </ul>
   </section>
