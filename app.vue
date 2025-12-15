@@ -1,5 +1,5 @@
 <template>
-  <header>todoサンプル</header>
+  <header>ヘッダー</header>
   <main>
     <NuxtPage />
   </main>
