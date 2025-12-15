@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useRoute, useAsyncData, useFetch } from "nuxt/app";
 import type { User } from "../../interfaces";
+import { useUserFetcher } from "../../composables/useUserFetcher";
 const route = useRoute();
 // const ApiUrl = `https://jsonplaceholder.typicode.com/users/${route.params.id}`;
 // const response = await $fetch<User>(ApiUrl);
@@ -18,15 +19,17 @@ const route = useRoute();
 //     },
 //   }
 // );
-const asyncData = useFetch(
-  `https://jsonplaceholder.typicode.com/users/${route.params.id}`,
-  {
-    key: `/user/${route.params.id}`,
-    transform: (data: User): string => {
-      return data.name + "（useFetch利用）";
-    },
-  }
-);
+
+// const asyncData = useFetch(
+//   `https://jsonplaceholder.typicode.com/users/${route.params.id}`,
+//   {
+//     key: `/user/${route.params.id}`,
+//     transform: (data: User): string => {
+//       return data.name + "（useFetch利用）";
+//     },
+//   }
+// );
+const asyncData = useUserFetcher(Number(route.params.id));
 const data = asyncData.data;
 const pending = asyncData.pending;
 const refresh = asyncData.refresh;
