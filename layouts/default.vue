@@ -1,7 +1,8 @@
 <template>
-  <div
-    class="p-12 bg-gray-100 w-full h-full min-h-screen flex flex-col items-center"
-  >
+  <header>
+    <h1>レイアウトサンプル</h1>
+  </header>
+  <main>
     <slot />
-  </div>
+  </main>
 </template>

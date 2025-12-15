@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useRouter, useState } from "nuxt/app";
+import { useRouter, useState, useHead } from "nuxt/app";
 import type { Member } from "../../interfaces";
 import { reactive } from "vue";
 const router = useRouter();
@@ -15,21 +15,27 @@ const onAdd = (): void => {
   memberList.value.set(member.id, member);
   router.push({ name: "member-memberList" });
 };
+definePageMeta({
+  layout: "member",
+});
+const PAGE_TITLE = "会員情報追加";
+useHead({
+  title: PAGE_TITLE,
+});
 </script>
 
 <template>
-  <h1>会員管理</h1>
   <nav>
     <ul>
       <li><NuxtLink :to="{ name: 'index' }">TOP</NuxtLink></li>
       <li>
         <NuxtLink :to="{ name: 'member-memberList' }">会員リスト</NuxtLink>
       </li>
-      <li>会員情報追加</li>
+      <li>{{ PAGE_TITLE }}</li>
     </ul>
   </nav>
   <section>
-    <h2>会員情報追加</h2>
+    <h2>{{ PAGE_TITLE }}</h2>
     <p>情報を入力し、登録ボタンをクリックしてください。</p>
     <form v-on:submit.prevent="onAdd">
       <dl>

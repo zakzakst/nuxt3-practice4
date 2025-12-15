@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useState } from "nuxt/app";
+import { useState, useHead } from "nuxt/app";
 import type { Member } from "./interfaces";
 useState<Map<number, Member>>("memberList", (): Map<number, Member> => {
   const memberListInit = new Map<number, Member>();
@@ -17,6 +17,13 @@ useState<Map<number, Member>>("memberList", (): Map<number, Member> => {
     points: 53,
   });
   return memberListInit;
+});
+const SITE_TITLE = "ヘッダ変更サンプル";
+useHead({
+  // title: SITE_TITLE,
+  titleTemplate: (titleChunk?: string): string => {
+    return titleChunk ? `${titleChunk} | ${SITE_TITLE}` : SITE_TITLE;
+  },
 });
 </script>
 
