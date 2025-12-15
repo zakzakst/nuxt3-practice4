@@ -28,6 +28,7 @@ const asyncData = useFetch(
   }
 );
 const data = asyncData.data;
+const pending = asyncData.pending;
 </script>
 
 <template>
@@ -39,7 +40,8 @@ const data = asyncData.data;
     <h2>{{ data?.name }}の情報</h2>
     <p>{{ JSON.stringify(data) }}</p>
   </section> -->
-  <section>
+  <p v-if="pending">データ取得中...</p>
+  <section v-else>
     <h2>{{ data }}の情報</h2>
     <p>{{ JSON.stringify(data) }}</p>
   </section>
