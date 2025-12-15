@@ -1,3 +1,3 @@
 <template>
-  <p>page</p>
+  <TheBaseSection />
 </template>
