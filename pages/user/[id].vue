@@ -29,6 +29,10 @@ const asyncData = useFetch(
 );
 const data = asyncData.data;
 const pending = asyncData.pending;
+const refresh = asyncData.refresh;
+const onRefresh = () => {
+  refresh();
+};
 </script>
 
 <template>
@@ -44,5 +48,6 @@ const pending = asyncData.pending;
   <section v-else>
     <h2>{{ data }}の情報</h2>
     <p>{{ JSON.stringify(data) }}</p>
+    <button v-on:click="onRefresh">再読み込み</button>
   </section>
 </template>
