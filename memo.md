@@ -4,3 +4,5 @@
 - storybook
 - vitest
 - フォームバリデーション
+- msw
+- orval
