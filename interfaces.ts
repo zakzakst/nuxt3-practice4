@@ -44,3 +44,16 @@ export interface User {
   website: string;
   company: UserCompany;
 }
+
+export interface AuthUser {
+  id: number;
+  name: string;
+  loginId: string;
+  password: string;
+}
+
+export interface ReturnJSONAuth {
+  result: number;
+  token: string;
+  user: AuthUser | null;
+}
