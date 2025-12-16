@@ -1,8 +1,9 @@
 <template>
-  <h1>TOP</h1>
   <nav>
     <ul>
-      <li>TOP</li>
+      <li>
+        <NuxtLink :to="{ name: 'errorHandlerBasic' }">エラー表示実験</NuxtLink>
+      </li>
     </ul>
   </nav>
 </template>
