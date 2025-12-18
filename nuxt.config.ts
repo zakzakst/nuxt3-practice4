@@ -1,3 +1,5 @@
+import { defineNuxtConfig } from "nuxt/config";
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: "latest",
@@ -9,4 +11,9 @@ export default defineNuxtConfig({
       weatherAppId: process.env.WEATHER_APP_ID,
     },
   },
+  alias: {
+    "@": "/<rootDir>",
+    "@components/*": "./components/*",
+  },
+  modules: ["@nuxt/test-utils/module"],
 });
