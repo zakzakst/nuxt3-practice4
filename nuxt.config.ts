@@ -13,7 +13,7 @@ export default defineNuxtConfig({
   },
   alias: {
     "@": "/<rootDir>",
-    "@components/*": "./components/*",
+    // "@/components/*": "./components/*",
   },
-  modules: ["@nuxt/test-utils/module"],
+  modules: ["@nuxt/test-utils/module", "@pinia/nuxt"],
 });
