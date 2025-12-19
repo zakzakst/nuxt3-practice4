@@ -1,11 +1,15 @@
 ## 調べる
 
+- tailwind
+- フォームバリデーション
+- msw（サーバーサイドのほうできていない）
+- orval（nuxt だと useFetch があるから、あまり使わないかも。。request や response の型を参照するくらい？） ※orval に client: vue-query というのがあったが、多分 TanStack Query 関連と思われる
+
+## 済
+
 - state 管理 pinia ／ inject provide
 - storybook
 - vitest
-- フォームバリデーション
-- msw
-- orval
 
 ## storybook
 
