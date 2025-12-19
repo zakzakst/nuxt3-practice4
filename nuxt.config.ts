@@ -15,5 +15,5 @@ export default defineNuxtConfig({
     "@": "/<rootDir>",
     // "@/components/*": "./components/*",
   },
-  modules: ["@nuxt/test-utils/module", "@pinia/nuxt"],
+  modules: ["@nuxt/test-utils/module", "@pinia/nuxt", "@nuxtjs/tailwindcss"],
 });
