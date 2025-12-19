@@ -5,9 +5,17 @@ import PiniaSample from "../../components/pinia/PiniaSample.vue";
 
 const counter = useCounterStore();
 const _counter = useCounter();
+
+const { $api } = useNuxtApp();
+
+const getApi = async () => {
+  const user = await $api.getUser(1);
+  console.log(user);
+};
 </script>
 
 <template>
+  <button @click="getApi">test</button>
   <div>
     <p>pinia</p>
     <button @click="counter.increment">+</button>
