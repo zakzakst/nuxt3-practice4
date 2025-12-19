@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import { useFetch, useCookie, navigateTo } from "nuxt/app";
+import { useFetch, useCookie, navigateTo, useNuxtApp } from "nuxt/app";
 import { ref } from "vue";
 import type { AuthUser, ReturnJSONAuth } from "../interfaces";
+const { $foo } = useNuxtApp();
 
 const loginId = ref("");
 const password = ref("");
@@ -49,6 +50,7 @@ const onLoginButtonClick = async (): Promise<void> => {
 
 <template>
   <h1>ログイン</h1>
+  <p>{{ $foo }}</p>
   <p v-if="pending">ログイン中...</p>
   <template v-else>
     <p v-if="authFailed">ログインIDまたはパスワードが違います</p>
